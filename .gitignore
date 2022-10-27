@@ -1,0 +1,11 @@
+**/.DS_Store
+.DS_Store
+**/*.fdb
+**/*.fbk
+**/*.deb
+**/*.zip
+**.*.jar
+**/*.tar.gz
+**.*.code-workspace
+*.code-workspace
+
