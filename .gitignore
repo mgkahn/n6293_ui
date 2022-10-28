@@ -4,7 +4,6 @@
 **/*.fbk
 **/*.deb
 **/*.zip
-**.*.jar
 **/*.tar.gz
 **.*.code-workspace
 *.code-workspace
