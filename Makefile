@@ -38,6 +38,9 @@ from-scratch: $(templates)
 buildx-push: $(templates)
 	docker buildx build --push --platform linux/amd64,linux/arm64 --tag $(REPO)$(NAME):$(TAG) .
 
+buildx-from-scratch: $(templates)
+	docker buildx build --no-cache --push --platform linux/amd64,linux/arm64 --tag $(REPO)$(NAME):$(TAG) .
+
 
 run:
 	docker volume create ${VOLUME}
