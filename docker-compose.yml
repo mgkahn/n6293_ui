@@ -28,6 +28,7 @@ services:
       USERNAME: $USER_NAME
       USERID: $USER_ID
       PASSWORD: nurs6293
+      RESOLUTION: 1600x900
     networks:
       - n6293_net
     ports:
