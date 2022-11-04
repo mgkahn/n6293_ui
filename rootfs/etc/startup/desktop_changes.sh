@@ -47,6 +47,9 @@ find ${HOME}/.config/libreoffice -name javasettings*.xml -type f -exec sed -i 's
 mkdir -p ${HOME}/Desktop/BaseDatabases
 cp -R /etc/startup/desktop/BaseDatabases/*.odb ${HOME}/Desktop/BaseDatabases/
 
+# Prevents complaints that ~/Templates is not present
+mkdir -p ${HOME}/Templates
+
 
 # Make all home files owned by user
 chown -R ${USERNAME}:${USERNAME} ${HOME}
