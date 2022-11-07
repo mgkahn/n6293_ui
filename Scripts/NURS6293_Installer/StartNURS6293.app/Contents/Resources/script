@@ -3,7 +3,7 @@
 # V4: Simplified YML commands for docker pull
 # V5: Added full path for docker because doesn't pull user environment variables;  removes stdout, stderr redirection
 # V6: Simplified YML commands for docker pull
-# V7: Remove /usr/local/bin from docker command. Add -l to Platypus script to ensure login shell for local $PATH
+# V7: Remove /usr/local/bin from docker command. Add -l to Platypus CLI script to ensure login shell for local $PATH
 
 echo "Removing containers: ui/db"
 docker container rm ui db
