@@ -27,6 +27,11 @@ cp /etc/startup/desktop/*.desktop ${HOME}/Desktop/
 # Add course launchers to bottom task bar
 cp /etc/startup/desktop/dot_config_lxpanel_LXDE_panels_panel ${HOME}/.config/lxpanel/LXDE/panels/panel
 
+# DbSchema
+# Add default config files
+mkdir -p ${HOME}/.DbSchema
+cp -r /etc/startup/desktop/dot.DbSchema/* ${HOME}/.DbSchema
+
 # FlameRobin
 # Set up FlameRobin with initial databases
 mkdir -p ${HOME}/.flamerobin

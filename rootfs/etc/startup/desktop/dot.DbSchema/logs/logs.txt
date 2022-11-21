@@ -1,0 +1,14 @@
+Start DbSchema.
+==== 2022-11-21 16:07:57 DbSchema #221101 Linux 5.15.49-linuxkit Java Private Build 17.0.4 ===
+Screen Size: [1600.0,874.0] outputScaleY=1.0 screenResolution=Medium
+ > newProject
+Dialog Database Connection Dialog
+Dialog Choose your database
+ > next
+Use RDBMS: Firebird
+Download Driver '/home/kahnmi/.DbSchema/drivers/Firebird'
+DRIVER LOADER: cannot instantiate org.firebirdsql.jdbc.FirebirdDriver .java.lang.NoSuchMethodException: org.firebirdsql.jdbc.FirebirdDriver.<init>()
+ > settings
+Dialog DbSchema Settings
+Dialog Edit String
+Exit DbSchema.
