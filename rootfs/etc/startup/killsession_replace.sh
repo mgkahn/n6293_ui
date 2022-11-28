@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Replace original warning message
-sed -i -e "s/Local data will be lost/Desktop data and folders will be saved/" /usr/local/bin/killsession.py
+# Replace original killsession.py with my version
 
-# Add send SIGTERM signal to db container. Requires /var/run/docker.sock to be mounted"
-sed -i -e "s^os.system^os.system(\"echo 'POST \/containers\/db\/kill?signal=SIGTERM HTTP\/1.0\\\r\\\n'|sudo nc -U \/var\/run\/docker.sock\")\n        os.system^" /usr/local/bin/killsession.py 
-# Need sudo access to run nc
-echo "%sudo ALL=(ALL) NOPASSWD: /usr/bin/nc" > /etc/sudoers.d/netcat
+# V1.0: Change KillSession dialog message
+# .     Add SIGTERM to db container -- REQUIRES /var/run/docker.sock to be mounted to work
+
+cp /etc/startup/killsession/killsession.py /usr/local/bin/killsession.py
+
+# Need sudo access to run nc for SIGTERM
+# echo "%sudo ALL=(ALL) NOPASSWD: /usr/bin/nc" > /etc/sudoers.d/netcat
+cp /etc/startup/killsession/nc.sudoer /etc/sudoers.d/nc.sudoer
