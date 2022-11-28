@@ -21,7 +21,6 @@ else
   USER_NAME=${SUDO_USER}
 fi
 
-
 # Stores Desktop into Docker volume
 # Creates desktop folder on both Ubuntu and host for file exchange
 
@@ -48,6 +47,7 @@ docker run --rm --detach \
   --publish ${PORT}:80 \
   --volume "${PWD}":/workspace:rw \
   --volume ${VOLUME}:/home/${USER_NAME}:rw \
+  --volume  /var/run/docker.sock:/var/run/docker.sock \
   --env USERNAME=${USER_NAME} --env USERID=${USER_ID} \
   --env PASSWORD="nurs6293" \
   --network ${NETWORK} \

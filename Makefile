@@ -66,7 +66,8 @@ run:
 	--publish ${PORT}:80 \
 	--volume "${PWD}":/workspace:rw \
 	--volume ${VOLUME}:/home/${USER_NAME}:rw \
-	--volume "${HOME}"/Desktop/${SHARED}:/home/${USER_NAME}/Desktop/${SHARED}:rw \
+	--volume "${HOME}/Desktop/${SHARED}":/home/${USER_NAME}/Desktop/${SHARED}:rw \
+	--volume  "/var/run/docker.sock":/var/run/docker.sock \
 	--env USERNAME=$(USER_NAME) --env USERID=$(USER_ID) \
 	--env PASSWORD="nurs6293" \
 	--network ${NETWORK} \

@@ -30,7 +30,7 @@ cp /etc/startup/desktop/dot_config_lxpanel_LXDE_panels_panel ${HOME}/.config/lxp
 # DbSchema
 # Add default config files
 mkdir -p ${HOME}/.DbSchema
-cp -r /etc/startup/desktop/dot.DbSchema/* ${HOME}/.DbSchema
+cp -ru /etc/startup/desktop/dot.DbSchema/* ${HOME}/.DbSchema
 
 # FlameRobin
 # Set up FlameRobin with initial databases
@@ -42,7 +42,7 @@ cp /etc/startup/desktop/dot_flamerobin_fr_settings.conf ${HOME}/.flamerobin/fr_s
 # LibreOffice does not create .config file until AFTER first launch so we put a version here
 # TODO: Figure out a better way to do this. 
 mkdir -p ${HOME}/.config/libreoffice
-cp -R /etc/startup/desktop/dotconfig.libreoffice/* ${HOME}/.config/libreoffice/
+cp -r /etc/startup/desktop/dotconfig.libreoffice/* ${HOME}/.config/libreoffice/
 # END TODO
 #
 # Add jaybird JAR to OpenOffice classpath in javasettings*.xml. Done twice -- sometimes xsi:nil=false. Must be false in final target string
@@ -50,7 +50,7 @@ find ${HOME}/.config/libreoffice -name javasettings*.xml -type f -exec sed -i 's
 find ${HOME}/.config/libreoffice -name javasettings*.xml -type f -exec sed -i 's|<userClassPath xsi:nil="false"/>|<userClassPath xsi:nil="false">/usr/local/bin/jaybird-full-4.0.6.java11.jar</userClassPath>|g' {} \;
 # Add BASE connection files (odb) to Desktop
 mkdir -p ${HOME}/Desktop/BaseDatabases
-cp -R /etc/startup/desktop/BaseDatabases/*.odb ${HOME}/Desktop/BaseDatabases/
+cp -r /etc/startup/desktop/BaseDatabases/*.odb ${HOME}/Desktop/BaseDatabases/
 
 # Prevents complaints that ~/Templates is not present
 mkdir -p ${HOME}/Templates

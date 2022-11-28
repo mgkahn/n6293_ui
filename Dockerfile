@@ -22,14 +22,14 @@ ENV LIBGL_ALWAYS_INDIRECT=1
 
 
 ## Programs specific to N6293
-RUN apt-get update && apt-get install -y openjdk-17-jre libreoffice libreoffice-sdbc-firebird flamerobin cups printer-driver-cups-pdf iputils-ping
+RUN apt-get update && apt-get install -y openjdk-17-jre libreoffice libreoffice-sdbc-firebird flamerobin cups printer-driver-cups-pdf iputils-ping netcat
 
 ## Files specific to N6293
 COPY --from=builder /opt/DbSchema /opt/DbSchema
 COPY --from=builder /builder/jaybird-4 /usr/local/bin
 
 COPY rootfs /
-RUN chmod +x /etc/startup/*.sh
+RUN chmod -R +x /etc/startup/*.sh
 
 # Uses startup.sh from base image.
 # Course-specific changes added to /etc/startup -- last step in startup.sh
