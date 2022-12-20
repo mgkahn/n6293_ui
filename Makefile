@@ -1,4 +1,4 @@
-.PHONY: build from-scratch buildx-push check run debug push save clean clobber
+.PHONY: build-buildx build from-scratch buildx-push check run debug push save clean clobber
 
 # Default values for variables
 REPO  ?= mgkahn/
@@ -19,6 +19,9 @@ PLATFORMS := $$(first="True"; for a in $(ARCHS); do if [[ $$first == "True" ]]; 
 
 # These files will be generated from teh Jinja templates (.j2 sources)
 templates = Dockerfile rootfs/etc/supervisor/conf.d/supervisord.conf
+
+build-buildx:
+	docker buildx create --name mybuilder --use --bootstrap
 
 # Rebuild the container image and remove intermediary images
 build: $(templates)

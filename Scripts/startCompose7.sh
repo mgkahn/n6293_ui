@@ -55,7 +55,6 @@ services:
       - n6293_net
     ports:
       - 6080:80
-      - 5900:5900
     volumes:
       - $PWD:/workspace
       - ui_vol:/home/$USER_NAME

@@ -45,33 +45,20 @@ Plugin {
   type=launchbar
   Config {
     Button {
-      id=pcmanfm.desktop
-    }
-    Button {
-      id=lxterminal.desktop
-    }
-    Button {
       id=firefox.desktop
     }
+    Button {
+      id=org.gnome.Screenshot.desktop
+    }
+    Button {
+      id=org.gnome.gedit.desktop
+    }
   }
 }
 Plugin {
   type=space
   Config {
-    Size=4
-  }
-}
-Plugin {
-  type=wincmd
-  Config {
-    Button1=iconify
-    Button2=shade
-  }
-}
-Plugin {
-  type=space
-  Config {
-    Size=97
+    Size=125
   }
 }
 Plugin {

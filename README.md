@@ -10,7 +10,8 @@ This is one of two docker images used for NURS 6293 Introduction to Database Sys
 - Uses Docker-managed volume, named ui_vol, the persist any configurations and files from ${HOME} directory.
 - Created Desktop folder named "Transfer_Station" that links to host Desktop folder with same name. Used to move files in/out of image. Mostly used by PDF printer for access to "printed" files
 - Communicates with Firebird DBMS server via docker-compose network called n6293_net via FB standard port 3050
-- HTML 5 GUI is accessed on host via `http://localhost:6080`. VNC client can also access same desktop via port `5900`.
+- HTML 5 GUI is accessed on host via `http://localhost:6080`
+- We have removed VNC client via port `5900` due to interference with Apple Remote Desktop.
 - Software added for NURS6293:
   - DBSchema. CURL pulls version 9.1.0 (DBSURL in Dockerfile)
     - Replaces X64-specific javafx jars with AARCH64 jars in /opt/DbSchema/lib/
@@ -61,6 +62,7 @@ This is one of two docker images used for NURS 6293 Introduction to Database Sys
    - Libreoffice configurations
      - Add JAYBIRD jar to Libreoffice javasettings XML
      - Add Base database ODB file to desktop
+     - Uncheck option to replace straight quotes with curley quotes
  - chown everything in $HOME to $USERNAME:$USERNAME
  - Uses ui_vol mounted to ${HOME} to maintain UI state across sessions.
    - If UI weirdness or need UI reset: need to execute `docker volume rm ui_vol` in CMD (Windows) or Terminal (Mac) window. Running this command will delete any new Desktop files. Only files stored in Transfer_Station will be saved.

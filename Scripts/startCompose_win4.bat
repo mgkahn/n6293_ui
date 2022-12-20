@@ -46,7 +46,6 @@ echo   networks:
 echo    - n6293_net
 echo   ports:
 echo    - 6080:80
-echo    - 5900:5900
 echo   volumes:
 echo    - %USERPROFILE%:/workspace
 echo    - ui_vol:/home/%USER_NAME%
